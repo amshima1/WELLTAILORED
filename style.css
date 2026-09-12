@@ -774,137 +774,42 @@ button {
 
 }
 
-
 /* =========================
-   MOBILE
+   SMALL MOBILE
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
 
-    .menu-toggle {
+    .hero {
+        min-height: 100vh;
 
-        display: block;
-
+        background-position: center center;
     }
 
-
-    .nav {
-
-        position: absolute;
-
-        top: 75px;
-
-        left: 0;
-
-        width: 100%;
-
-        padding: 25px;
-
-        background: #0b0b0b;
-
-        display: none;
-
-        flex-direction: column;
-
-        gap: 22px;
-
+    .hero-content {
+        padding-top: 100px;
     }
 
-
-    .nav.active {
-
-        display: flex;
-
+    .hero h1 {
+        font-size: 55px;
     }
 
-
-    .service-grid,
-
-    .collection-grid,
-
-    .about-grid {
-
-        grid-template-columns: 1fr;
-
+    .hero-text {
+        font-size: 16px;
     }
 
-
-    .about-image {
-
-        order: 2;
-
-    }
-
-
-    .about-image img {
-
-        min-height: 450px;
-
-    }
-
-
-    .collection-card {
-
-        height: 350px;
-
-    }
-
-
-    .footer-content {
-
-        flex-direction: column;
-
-    }
-
-
-    .social-links {
-
-        flex-wrap: wrap;
-
+    .section {
+        padding: 70px 0;
     }
 
 }
 
 
-@media (max-width: 500px) {
-
-    .hero {
-
-        background-position: 60% center;
-
-    }
-
-
-    .hero-content {
-
-        padding-top: 100px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 55px;
-
-    }
-
-
-    .hero-text {
-
-        font-size: 16px;
-
-    }
-
-
-    .section {
-
-        padding: 70px 0;
 /* =========================
    SCROLL ANIMATION
 ========================= */
 
 .reveal {
-
     opacity: 0;
 
     transform: translateY(30px);
@@ -912,14 +817,10 @@ button {
     transition:
         opacity 0.8s ease,
         transform 0.8s ease;
-
 }
 
 .reveal.show {
-
     opacity: 1;
 
     transform: translateY(0);
-  }
-
 }
