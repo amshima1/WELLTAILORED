@@ -775,33 +775,169 @@ button {
 }
 
 /* =========================
-   SMALL MOBILE
+   MOBILE
 ========================= */
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
+
+    .nav-container {
+        height: 65px;
+    }
+
+    .logo {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .menu-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        color: white;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .nav {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+
+        padding: 25px;
+
+        background: #0b0b0b;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 22px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+
+    /* HERO */
 
     .hero {
-        min-height: 100vh;
+        min-height: 100svh;
+
+        background-size: cover;
 
         background-position: center center;
     }
 
     .hero-content {
-        padding-top: 100px;
+        width: 92%;
+        padding-top: 90px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
     }
 
     .hero h1 {
-        font-size: 55px;
+        font-size: clamp(48px, 14vw, 65px);
+        line-height: 0.95;
+        margin: 15px 0;
     }
 
     .hero-text {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 95%;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 13px 18px;
+        font-size: 10px;
+    }
+
+
+    /* SERVICES */
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        order: 2;
+    }
+
+    .about-image img {
+        min-height: 450px;
+    }
+
+
+    /* COLLECTION */
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-card {
+        height: 350px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 500px) {
+
+    .hero {
+        min-height: 100svh;
+
+        background-position: center center;
+    }
+
+    .hero-content {
+        padding-top: 90px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-text {
+        font-size: 14px;
     }
 
     .section {
         padding: 70px 0;
     }
-
 }
 
 
