@@ -179,57 +179,41 @@ button {
 ========================= */
 
 .hero {
-
     min-height: 100vh;
-
     position: relative;
-
     display: flex;
-
     align-items: center;
 
     color: white;
 
-    background-image: url("welltailored_hero_optimized.jpg");
-
+    background-image: url("./welltailored_hero_optimized.jpg");
     background-size: cover;
-
-    background-position: center;
-
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-
 .hero-overlay {
-
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.78),
-            rgba(0,0,0,0.25)
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.25)
         );
-
 }
 
-
 .hero-content {
-
     position: relative;
-
     z-index: 2;
 
     padding-top: 80px;
 
     max-width: 680px;
-
 }
 
-
 .eyebrow {
-
     color: var(--gold);
 
     font-family: Arial, sans-serif;
@@ -241,12 +225,9 @@ button {
     letter-spacing: 3px;
 
     text-transform: uppercase;
-
 }
 
-
 .hero h1 {
-
     margin: 20px 0;
 
     font-size: clamp(55px, 9vw, 100px);
@@ -254,19 +235,13 @@ button {
     line-height: 0.95;
 
     font-weight: 500;
-
 }
-
 
 .hero h1 span {
-
     color: var(--gold);
-
 }
 
-
 .hero-text {
-
     max-width: 570px;
 
     color: #eeeeee;
@@ -274,18 +249,14 @@ button {
     font-size: 18px;
 
     margin-bottom: 30px;
-
 }
 
-
 .hero-buttons {
-
     display: flex;
 
     gap: 15px;
 
     flex-wrap: wrap;
-
 }
 
 
