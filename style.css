@@ -84,10 +84,7 @@ button {
 }
 
 .nav-container {
-    width: min(1120px, 92%);
     min-height: 75px;
-
-    margin: 0 auto;
 
     display: flex;
     align-items: center;
@@ -96,47 +93,45 @@ button {
 
 
 /* =====================================================
-   TRANSPARENT LOGO
+   LOGO
 ===================================================== */
 
 /*
    IMPORTANT:
-   The logo file must be:
+
+   Use a REAL transparent PNG:
 
    logo.png
 
-   and must have a transparent background.
+   Do NOT use:
+   welltailored_logo_optimized.jpg
+
+   JPG cannot have a transparent background.
 */
 
 .logo {
+    width: 105px;
+    height: 60px;
+
     display: flex;
     align-items: center;
 
-    width: 105px;
-    height: 55px;
-
     flex-shrink: 0;
-
-    overflow: hidden;
 
     background: transparent;
 
-    font-size: 0;
+    overflow: hidden;
 }
 
 .logo img {
-    width: 105px;
-    height: 55px;
+    width: 100%;
+    height: 100%;
 
     object-fit: contain;
 
     display: block;
 
     background: transparent;
-}
-
-.logo span {
-    display: none;
 }
 
 
@@ -147,7 +142,6 @@ button {
 .nav {
     display: flex;
     align-items: center;
-
     gap: 28px;
 }
 
@@ -160,6 +154,7 @@ button {
     font-weight: 600;
 
     text-transform: uppercase;
+
     letter-spacing: 1.5px;
 
     transition: color 0.3s ease;
@@ -171,7 +166,7 @@ button {
 
 
 /* =====================================================
-   HAMBURGER
+   MOBILE MENU BUTTON
 ===================================================== */
 
 .menu-toggle {
@@ -184,11 +179,12 @@ button {
     color: white;
 
     font-size: 32px;
+
     line-height: 1;
 
-    padding: 5px;
-
     cursor: pointer;
+
+    padding: 5px;
 }
 
 
@@ -197,22 +193,30 @@ button {
 ===================================================== */
 
 .hero {
-    position: relative;
-
     min-height: 100vh;
     min-height: 100svh;
 
+    position: relative;
+
     display: flex;
     align-items: center;
+    justify-content: center;
 
     color: white;
 
     background-image: url("./welltailored_hero_optimized.jpg");
 
     background-size: cover;
+
     background-position: center center;
+
     background-repeat: no-repeat;
 }
+
+
+/* =====================================================
+   HERO OVERLAY
+===================================================== */
 
 .hero-overlay {
     position: absolute;
@@ -222,10 +226,15 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.72),
             rgba(0, 0, 0, 0.30)
         );
 }
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
 
 .hero-content {
     position: relative;
@@ -233,10 +242,20 @@ button {
     z-index: 2;
 
     width: 100%;
-    max-width: 720px;
+
+    max-width: 850px;
+
+    margin: 0 auto;
 
     padding-top: 75px;
+
+    text-align: center;
 }
+
+
+/* =====================================================
+   EYEBROW
+===================================================== */
 
 .eyebrow {
     color: var(--gold);
@@ -244,12 +263,18 @@ button {
     font-family: Arial, sans-serif;
 
     font-size: 11px;
+
     font-weight: bold;
 
     letter-spacing: 3px;
 
     text-transform: uppercase;
 }
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
 
 .hero h1 {
     margin: 20px 0;
@@ -265,18 +290,32 @@ button {
     color: var(--gold);
 }
 
+
+/* =====================================================
+   HERO TEXT
+===================================================== */
+
 .hero-text {
-    max-width: 600px;
+    max-width: 650px;
+
+    margin: 0 auto 30px;
 
     color: #eeeeee;
 
     font-size: 18px;
-
-    margin-bottom: 30px;
 }
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
 
 .hero-buttons {
     display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 
     gap: 15px;
 
@@ -302,9 +341,11 @@ button {
     font-family: Arial, sans-serif;
 
     font-size: 12px;
+
     font-weight: bold;
 
     text-transform: uppercase;
+
     letter-spacing: 1px;
 
     transition: all 0.3s ease;
@@ -312,16 +353,19 @@ button {
 
 .btn:hover {
     background: transparent;
+
     color: var(--gold);
 }
 
 .btn-outline {
     background: transparent;
+
     color: white;
 }
 
 .btn-outline:hover {
     background: var(--gold);
+
     color: #111;
 }
 
@@ -341,6 +385,7 @@ button {
 
 .section-heading {
     width: 100%;
+
     max-width: 750px;
 
     margin: 0 auto 50px;
@@ -387,12 +432,10 @@ button {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
-
-    align-items: stretch;
 }
 
 .service-card {
-    background: white;
+    background: var(--white);
 
     padding: 35px;
 
@@ -451,8 +494,6 @@ button {
 }
 
 .about-image {
-    width: 100%;
-
     overflow: hidden;
 }
 
@@ -466,10 +507,6 @@ button {
 
 .about-content {
     text-align: center;
-}
-
-.about-content .eyebrow {
-    margin-bottom: 10px;
 }
 
 .about-content h2 {
@@ -489,9 +526,7 @@ button {
 .about-content p {
     color: #cccccc;
 
-    margin: 0 auto 20px;
-
-    max-width: 600px;
+    margin-bottom: 20px;
 }
 
 .about-content .btn {
@@ -516,22 +551,29 @@ button {
 }
 
 .collection-card {
-    position: relative;
-
     height: 420px;
+
+    position: relative;
 
     display: flex;
 
     align-items: flex-end;
 
+    justify-content: center;
+
     overflow: hidden;
 
-    border-radius: 2px;
-
     background-size: cover;
+
     background-position: center;
-    background-repeat: no-repeat;
+
+    border-radius: 2px;
 }
+
+
+/* =====================================================
+   COLLECTION OVERLAY
+===================================================== */
 
 .collection-card::after {
     content: "";
@@ -633,15 +675,10 @@ button {
 
 .cta-content {
     width: 100%;
+
     max-width: 800px;
 
     margin: 0 auto;
-
-    text-align: center;
-}
-
-.cta .eyebrow {
-    margin-bottom: 10px;
 }
 
 .cta h2 {
@@ -696,11 +733,15 @@ button {
 
     display: flex;
 
-    justify-content: space-between;
+    flex-direction: column;
+
+    justify-content: center;
 
     align-items: center;
 
-    gap: 30px;
+    gap: 20px;
+
+    text-align: center;
 }
 
 .footer h3 {
@@ -719,6 +760,8 @@ button {
     align-items: center;
 
     justify-content: center;
+
+    flex-wrap: wrap;
 }
 
 .social-links a {
@@ -749,31 +792,23 @@ button {
 
 
 /* =====================================================
-   TABLET
+   TABLETS
 ===================================================== */
 
 @media (max-width: 900px) {
 
-    .container,
-    .nav-container {
+    .container {
         width: 92%;
     }
 
-
-    /* LOGO */
+    /* Logo */
 
     .logo {
         width: 95px;
-        height: 50px;
+        height: 55px;
     }
 
-    .logo img {
-        width: 95px;
-        height: 50px;
-    }
-
-
-    /* NAV */
+    /* Navigation */
 
     .nav {
         gap: 18px;
@@ -783,22 +818,19 @@ button {
         font-size: 10px;
     }
 
-
-    /* SERVICES */
+    /* Services */
 
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
-    /* COLLECTION */
+    /* Collection */
 
     .collection-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
-    /* ABOUT */
+    /* About */
 
     .about-grid {
         gap: 35px;
@@ -826,54 +858,49 @@ button {
         min-height: 65px;
     }
 
-
-    /* SMALL LOGO TOP LEFT */
+    /* Small logo — top left */
 
     .logo {
-        width: 82px;
-        height: 46px;
-
-        margin-left: 0;
+        width: 85px;
+        height: 50px;
     }
 
     .logo img {
-        width: 82px;
-        height: 46px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
 
-    /* HAMBURGER */
+    /* ================= HAMBURGER ================= */
 
     .menu-toggle {
         display: block;
 
         font-size: 30px;
-
-        margin-left: auto;
     }
 
 
-    /* MOBILE NAV */
+    /* ================= MOBILE NAV ================= */
 
     .nav {
         position: absolute;
 
         top: 65px;
+
         left: 0;
 
         width: 100%;
 
-        padding: 25px 20px;
+        padding: 25px;
 
-        background: rgba(11, 11, 11, 0.98);
+        background: rgba(11, 11, 11, 0.97);
 
         display: none;
 
         flex-direction: column;
 
         align-items: center;
-
-        justify-content: center;
 
         gap: 18px;
     }
@@ -904,20 +931,18 @@ button {
     .hero-overlay {
         background:
             linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0.35),
-                rgba(0, 0, 0, 0.72)
+                90deg,
+                rgba(0, 0, 0, 0.72),
+                rgba(0, 0, 0, 0.38)
             );
     }
 
     .hero-content {
-        width: 100%;
+        width: 92%;
 
         max-width: 600px;
 
-        padding-top: 80px;
-
-        margin: 0 auto;
+        padding-top: 75px;
 
         text-align: center;
     }
@@ -944,14 +969,14 @@ button {
         line-height: 1.5;
     }
 
+
+    /* ================= HERO BUTTONS ================= */
+
     .hero-buttons {
         justify-content: center;
 
         align-items: center;
     }
-
-
-    /* ================= BUTTONS ================= */
 
     .btn {
         padding: 13px 18px;
@@ -1050,7 +1075,7 @@ button {
     /* ================= CTA ================= */
 
     .cta-content {
-        width: 100%;
+        width: 92%;
 
         text-align: center;
     }
@@ -1068,6 +1093,8 @@ button {
         text-align: center;
 
         justify-content: center;
+
+        align-items: center;
     }
 
     .social-links {
@@ -1084,40 +1111,34 @@ button {
 
 @media (max-width: 480px) {
 
-    .container,
-    .nav-container {
+    .container {
         width: 90%;
     }
 
 
-    /* LOGO */
+    /* Logo */
 
     .logo {
-        width: 75px;
-        height: 42px;
-    }
-
-    .logo img {
-        width: 75px;
-        height: 42px;
+        width: 78px;
+        height: 45px;
     }
 
 
-    /* HAMBURGER */
+    /* Hamburger */
 
     .menu-toggle {
         font-size: 29px;
     }
 
 
-    /* HERO */
+    /* Hero */
 
     .hero {
         background-position: 55% center;
     }
 
     .hero-content {
-        padding-top: 75px;
+        padding-top: 70px;
     }
 
     .hero h1 {
@@ -1126,19 +1147,15 @@ button {
 
     .hero-text {
         font-size: 14px;
-
-        padding: 0 5px;
     }
 
 
-    /* BUTTONS */
+    /* Buttons */
 
     .hero-buttons {
         flex-direction: column;
 
         align-items: center;
-
-        gap: 12px;
     }
 
     .hero-buttons .btn {
@@ -1146,21 +1163,21 @@ button {
     }
 
 
-    /* SECTION */
+    /* Section heading */
 
     .section-heading h2 {
         font-size: 42px;
     }
 
 
-    /* SERVICES */
+    /* Services */
 
     .service-card {
         padding: 25px 20px;
     }
 
 
-    /* ABOUT */
+    /* About */
 
     .about-content h2 {
         font-size: 42px;
@@ -1171,7 +1188,7 @@ button {
     }
 
 
-    /* COLLECTION */
+    /* Collection */
 
     .collection-card {
         height: 320px;
@@ -1199,21 +1216,16 @@ button {
 @media (max-width: 360px) {
 
     .logo {
-        width: 68px;
-        height: 38px;
-    }
-
-    .logo img {
-        width: 68px;
-        height: 38px;
+        width: 70px;
+        height: 40px;
     }
 
     .hero h1 {
-        font-size: 43px;
+        font-size: 42px;
     }
 
     .section-heading h2 {
-        font-size: 38px;
+        font-size: 37px;
     }
 
     .collection-card {
