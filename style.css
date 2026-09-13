@@ -81,16 +81,21 @@ button {
     justify-content: space-between;
 }
 
+/* ================= LOGO ================= */
+
 .logo {
-    color: var(--white);
-    font-size: 17px;
-    font-weight: bold;
-    letter-spacing: 4px;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    flex-shrink: 0;
 }
 
-.logo span {
-    color: var(--gold);
+.logo img {
+    display: block;
+    width: 120px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .nav {
