@@ -115,7 +115,7 @@ button {
 
     flex-shrink: 0;
 
-    background-image: url("./welltailored_logo_optimized.jpg");
+    background-image: url("./welltailored_logo_transparent.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -199,7 +199,7 @@ button {
 
     color: white;
 
-    background-image: url("./welltailored_hero_optimized.jpg");
+    background-image: url("./welltailored_logo_transparent.png");
 
     background-size: cover;
     background-position: center center;
