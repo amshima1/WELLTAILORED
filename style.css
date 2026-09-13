@@ -1,10 +1,12 @@
 /* =====================================================
-   WELL TAILORED — COMPLETE RESPONSIVE CSS
+   WELL TAILORED
+   COMPLETE RESPONSIVE CSS
 ===================================================== */
 
-/* =========================
+
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -26,6 +28,7 @@ body {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -38,9 +41,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    VARIABLES
-========================= */
+===================================================== */
 
 :root {
     --black: #0b0b0b;
@@ -53,9 +56,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    CONTAINER
-========================= */
+===================================================== */
 
 .container {
     width: min(1120px, 92%);
@@ -77,15 +80,14 @@ button {
 
     z-index: 1000;
 
-    /*
-       Transparent header allows the hero image
-       to appear behind the header.
-    */
     background: transparent;
 }
 
 .nav-container {
+    width: min(1120px, 92%);
     min-height: 75px;
+
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
@@ -94,39 +96,43 @@ button {
 
 
 /* =====================================================
-   LOGO
+   TRANSPARENT LOGO
 ===================================================== */
 
 /*
-   Your current HTML still contains:
+   IMPORTANT:
+   The logo file must be:
 
-   WELL <span>TAILORED</span>
+   logo.png
 
-   So this CSS hides that text and uses the
-   uploaded Well Tailored logo instead.
+   and must have a transparent background.
 */
 
 .logo {
-    width: 105px;
-    height: 55px;
-
     display: flex;
     align-items: center;
 
+    width: 105px;
+    height: 55px;
+
     flex-shrink: 0;
 
-    background-image: url("./welltailored_logo_transparent.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
 
-    /*
-       Helps the black background of the logo
-       blend better with the page.
-    */
-    mix-blend-mode: normal;
+    background: transparent;
 
     font-size: 0;
+}
+
+.logo img {
+    width: 105px;
+    height: 55px;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: transparent;
 }
 
 .logo span {
@@ -141,6 +147,7 @@ button {
 .nav {
     display: flex;
     align-items: center;
+
     gap: 28px;
 }
 
@@ -164,13 +171,14 @@ button {
 
 
 /* =====================================================
-   MOBILE MENU BUTTON
+   HAMBURGER
 ===================================================== */
 
 .menu-toggle {
     display: none;
 
     border: none;
+
     background: transparent;
 
     color: white;
@@ -178,9 +186,9 @@ button {
     font-size: 32px;
     line-height: 1;
 
-    cursor: pointer;
-
     padding: 5px;
+
+    cursor: pointer;
 }
 
 
@@ -189,17 +197,17 @@ button {
 ===================================================== */
 
 .hero {
+    position: relative;
+
     min-height: 100vh;
     min-height: 100svh;
-
-    position: relative;
 
     display: flex;
     align-items: center;
 
     color: white;
 
-    background-image: url("./welltailored_logo_transparent.png");
+    background-image: url("./welltailored_hero_optimized.jpg");
 
     background-size: cover;
     background-position: center center;
@@ -208,24 +216,26 @@ button {
 
 .hero-overlay {
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
             rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.25)
+            rgba(0, 0, 0, 0.30)
         );
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
     max-width: 720px;
 
-    padding-top: 80px;
+    padding-top: 75px;
 }
 
 .eyebrow {
@@ -237,6 +247,7 @@ button {
     font-weight: bold;
 
     letter-spacing: 3px;
+
     text-transform: uppercase;
 }
 
@@ -266,7 +277,9 @@ button {
 
 .hero-buttons {
     display: flex;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
@@ -327,6 +340,7 @@ button {
 ===================================================== */
 
 .section-heading {
+    width: 100%;
     max-width: 750px;
 
     margin: 0 auto 50px;
@@ -373,6 +387,8 @@ button {
     grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
+
+    align-items: stretch;
 }
 
 .service-card {
@@ -435,6 +451,8 @@ button {
 }
 
 .about-image {
+    width: 100%;
+
     overflow: hidden;
 }
 
@@ -448,6 +466,10 @@ button {
 
 .about-content {
     text-align: center;
+}
+
+.about-content .eyebrow {
+    margin-bottom: 10px;
 }
 
 .about-content h2 {
@@ -467,7 +489,9 @@ button {
 .about-content p {
     color: #cccccc;
 
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+
+    max-width: 600px;
 }
 
 .about-content .btn {
@@ -492,19 +516,21 @@ button {
 }
 
 .collection-card {
-    height: 420px;
-
     position: relative;
 
+    height: 420px;
+
     display: flex;
+
     align-items: flex-end;
 
     overflow: hidden;
 
+    border-radius: 2px;
+
     background-size: cover;
     background-position: center;
-
-    border-radius: 2px;
+    background-repeat: no-repeat;
 }
 
 .collection-card::after {
@@ -522,7 +548,9 @@ button {
 }
 
 
-/* Collection backgrounds */
+/* =====================================================
+   COLLECTION BACKGROUNDS
+===================================================== */
 
 .men {
     background:
@@ -552,7 +580,9 @@ button {
 }
 
 
-/* Collection text */
+/* =====================================================
+   COLLECTION TEXT
+===================================================== */
 
 .collection-overlay {
     position: relative;
@@ -602,9 +632,16 @@ button {
 }
 
 .cta-content {
+    width: 100%;
     max-width: 800px;
 
     margin: 0 auto;
+
+    text-align: center;
+}
+
+.cta .eyebrow {
+    margin-bottom: 10px;
 }
 
 .cta h2 {
@@ -633,6 +670,8 @@ button {
     display: flex;
 
     justify-content: center;
+
+    align-items: center;
 
     gap: 15px;
 
@@ -678,6 +717,7 @@ button {
     gap: 20px;
 
     align-items: center;
+
     justify-content: center;
 }
 
@@ -709,23 +749,31 @@ button {
 
 
 /* =====================================================
-   TABLETS
+   TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
 
-    .container {
+    .container,
+    .nav-container {
         width: 92%;
     }
 
-    /* Logo */
+
+    /* LOGO */
 
     .logo {
-        width: 100px;
-        height: 52px;
+        width: 95px;
+        height: 50px;
     }
 
-    /* Navigation */
+    .logo img {
+        width: 95px;
+        height: 50px;
+    }
+
+
+    /* NAV */
 
     .nav {
         gap: 18px;
@@ -735,19 +783,22 @@ button {
         font-size: 10px;
     }
 
-    /* Services */
+
+    /* SERVICES */
 
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Collection */
+
+    /* COLLECTION */
 
     .collection-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* About */
+
+    /* ABOUT */
 
     .about-grid {
         gap: 35px;
@@ -775,20 +826,34 @@ button {
         min-height: 65px;
     }
 
-    /* Small logo at top left */
+
+    /* SMALL LOGO TOP LEFT */
 
     .logo {
-        width: 90px;
-        height: 48px;
+        width: 82px;
+        height: 46px;
+
+        margin-left: 0;
     }
 
-    /* Hamburger */
+    .logo img {
+        width: 82px;
+        height: 46px;
+    }
+
+
+    /* HAMBURGER */
 
     .menu-toggle {
         display: block;
+
+        font-size: 30px;
+
+        margin-left: auto;
     }
 
-    /* Mobile navigation */
+
+    /* MOBILE NAV */
 
     .nav {
         position: absolute;
@@ -798,15 +863,17 @@ button {
 
         width: 100%;
 
-        padding: 25px;
+        padding: 25px 20px;
 
-        background: rgba(11, 11, 11, 0.97);
+        background: rgba(11, 11, 11, 0.98);
 
         display: none;
 
         flex-direction: column;
 
         align-items: center;
+
+        justify-content: center;
 
         gap: 18px;
     }
@@ -837,16 +904,20 @@ button {
     .hero-overlay {
         background:
             linear-gradient(
-                90deg,
-                rgba(0, 0, 0, 0.72),
-                rgba(0, 0, 0, 0.38)
+                180deg,
+                rgba(0, 0, 0, 0.35),
+                rgba(0, 0, 0, 0.72)
             );
     }
 
     .hero-content {
+        width: 100%;
+
         max-width: 600px;
 
-        padding-top: 90px;
+        padding-top: 80px;
+
+        margin: 0 auto;
 
         text-align: center;
     }
@@ -875,6 +946,8 @@ button {
 
     .hero-buttons {
         justify-content: center;
+
+        align-items: center;
     }
 
 
@@ -897,6 +970,8 @@ button {
     /* ================= SECTION HEADINGS ================= */
 
     .section-heading {
+        width: 100%;
+
         margin-bottom: 40px;
 
         text-align: center;
@@ -921,6 +996,8 @@ button {
 
     .service-card {
         padding: 30px 25px;
+
+        text-align: center;
     }
 
     .service-card h3 {
@@ -937,9 +1014,9 @@ button {
     }
 
     .about-content {
-        text-align: center;
-
         order: 1;
+
+        text-align: center;
     }
 
     .about-image {
@@ -965,6 +1042,8 @@ button {
 
     .collection-overlay {
         padding: 25px;
+
+        text-align: center;
     }
 
 
@@ -993,6 +1072,8 @@ button {
 
     .social-links {
         flex-wrap: wrap;
+
+        justify-content: center;
     }
 }
 
@@ -1003,34 +1084,40 @@ button {
 
 @media (max-width: 480px) {
 
-    .container {
+    .container,
+    .nav-container {
         width: 90%;
     }
 
 
-    /* Logo */
+    /* LOGO */
 
     .logo {
-        width: 82px;
-        height: 44px;
+        width: 75px;
+        height: 42px;
+    }
+
+    .logo img {
+        width: 75px;
+        height: 42px;
     }
 
 
-    /* Hamburger */
+    /* HAMBURGER */
 
     .menu-toggle {
-        font-size: 30px;
+        font-size: 29px;
     }
 
 
-    /* Hero */
+    /* HERO */
 
     .hero {
         background-position: 55% center;
     }
 
     .hero-content {
-        padding-top: 80px;
+        padding-top: 75px;
     }
 
     .hero h1 {
@@ -1039,15 +1126,19 @@ button {
 
     .hero-text {
         font-size: 14px;
+
+        padding: 0 5px;
     }
 
 
-    /* Buttons */
+    /* BUTTONS */
 
     .hero-buttons {
         flex-direction: column;
 
         align-items: center;
+
+        gap: 12px;
     }
 
     .hero-buttons .btn {
@@ -1055,21 +1146,21 @@ button {
     }
 
 
-    /* Section heading */
+    /* SECTION */
 
     .section-heading h2 {
         font-size: 42px;
     }
 
 
-    /* Services */
+    /* SERVICES */
 
     .service-card {
         padding: 25px 20px;
     }
 
 
-    /* About */
+    /* ABOUT */
 
     .about-content h2 {
         font-size: 42px;
@@ -1080,7 +1171,7 @@ button {
     }
 
 
-    /* Collection */
+    /* COLLECTION */
 
     .collection-card {
         height: 320px;
@@ -1108,8 +1199,13 @@ button {
 @media (max-width: 360px) {
 
     .logo {
-        width: 75px;
-        height: 40px;
+        width: 68px;
+        height: 38px;
+    }
+
+    .logo img {
+        width: 68px;
+        height: 38px;
     }
 
     .hero h1 {
