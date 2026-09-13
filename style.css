@@ -1,3 +1,7 @@
+/* =====================================================
+   WELL TAILORED — COMPLETE RESPONSIVE CSS
+===================================================== */
+
 /* =========================
    RESET
 ========================= */
@@ -22,7 +26,6 @@ body {
 
 img {
     max-width: 100%;
-    width: 100%;
     display: block;
 }
 
@@ -50,54 +53,90 @@ button {
 }
 
 
-/* ================= NAV CONTAINER ================= */
+/* =========================
+   CONTAINER
+========================= */
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 70px;
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
-
-/* ================= HEADER ================= */
+===================================================== */
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
-    height: 70px;
+    height: 75px;
+
     z-index: 1000;
+
+    /*
+       Transparent header allows the hero image
+       to appear behind the header.
+    */
+    background: transparent;
 }
 
 .nav-container {
     min-height: 75px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* ================= LOGO ================= */
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+/*
+   Your current HTML still contains:
+
+   WELL <span>TAILORED</span>
+
+   So this CSS hides that text and uses the
+   uploaded Well Tailored logo instead.
+*/
 
 .logo {
+    width: 105px;
+    height: 55px;
+
     display: flex;
     align-items: center;
-    width: 120px;
-    height: 50px;
+
     flex-shrink: 0;
+
+    background-image: url("./welltailored_logo_optimized.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /*
+       Helps the black background of the logo
+       blend better with the page.
+    */
+    mix-blend-mode: normal;
+
+    font-size: 0;
 }
 
-.logo img {
-    display: block;
-    width: 120px;
-    height: 50px;
-    object-fit: contain;
+.logo span {
+    display: none;
 }
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .nav {
     display: flex;
@@ -107,31 +146,47 @@ button {
 
 .nav a {
     color: white;
+
     font-family: Arial, sans-serif;
-    font-size: 12px;
+
+    font-size: 11px;
+    font-weight: 600;
+
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: 0.3s;
+
+    transition: color 0.3s ease;
 }
 
 .nav a:hover {
     color: var(--gold);
 }
 
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
 .menu-toggle {
     display: none;
+
     border: none;
     background: transparent;
+
     color: white;
-    font-size: 28px;
+
+    font-size: 32px;
     line-height: 1;
+
     cursor: pointer;
+
+    padding: 5px;
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
     min-height: 100vh;
@@ -145,6 +200,7 @@ button {
     color: white;
 
     background-image: url("./welltailored_hero_optimized.jpg");
+
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -157,7 +213,7 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.75),
             rgba(0, 0, 0, 0.25)
         );
 }
@@ -167,7 +223,7 @@ button {
     z-index: 2;
 
     width: 100%;
-    max-width: 680px;
+    max-width: 720px;
 
     padding-top: 80px;
 }
@@ -177,7 +233,7 @@ button {
 
     font-family: Arial, sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
 
     letter-spacing: 3px;
@@ -187,7 +243,7 @@ button {
 .hero h1 {
     margin: 20px 0;
 
-    font-size: clamp(55px, 9vw, 100px);
+    font-size: clamp(55px, 8vw, 100px);
 
     line-height: 0.95;
 
@@ -199,7 +255,7 @@ button {
 }
 
 .hero-text {
-    max-width: 570px;
+    max-width: 600px;
 
     color: #eeeeee;
 
@@ -215,9 +271,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    BUTTONS
-========================= */
+===================================================== */
 
 .btn {
     display: inline-block;
@@ -238,7 +294,7 @@ button {
     text-transform: uppercase;
     letter-spacing: 1px;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -257,17 +313,29 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 .section {
     padding: 100px 0;
 }
 
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
 .section-heading {
-    max-width: 700px;
-    margin-bottom: 45px;
+    max-width: 750px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 10px;
 }
 
 .section-heading h2 {
@@ -286,13 +354,14 @@ button {
 
 .section-heading > p:last-child {
     color: var(--gray);
+
     font-size: 17px;
 }
 
 
-/* =========================
+/* =====================================================
    SERVICES
-========================= */
+===================================================== */
 
 .services {
     background: var(--cream);
@@ -300,7 +369,9 @@ button {
 
 .service-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
 }
 
@@ -311,11 +382,14 @@ button {
 
     border: 1px solid #e3ddd3;
 
-    transition: 0.3s;
+    text-align: center;
+
+    transition: all 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-7px);
+
     border-color: var(--gold);
 }
 
@@ -325,11 +399,13 @@ button {
     font-family: Arial, sans-serif;
 
     font-size: 13px;
+
     letter-spacing: 2px;
 }
 
 .service-card h3 {
     font-size: 25px;
+
     margin: 15px 0 10px;
 }
 
@@ -338,12 +414,13 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about {
     background: var(--black);
+
     color: white;
 }
 
@@ -363,9 +440,14 @@ button {
 
 .about-image img {
     width: 100%;
+
     min-height: 600px;
 
     object-fit: cover;
+}
+
+.about-content {
+    text-align: center;
 }
 
 .about-content h2 {
@@ -384,13 +466,18 @@ button {
 
 .about-content p {
     color: #cccccc;
+
     margin-bottom: 20px;
 }
 
+.about-content .btn {
+    margin-top: 10px;
+}
 
-/* =========================
+
+/* =====================================================
    COLLECTION
-========================= */
+===================================================== */
 
 .collection {
     background: white;
@@ -401,7 +488,7 @@ button {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 16px;
+    gap: 20px;
 }
 
 .collection-card {
@@ -410,55 +497,81 @@ button {
     position: relative;
 
     display: flex;
-    align-items: end;
+    align-items: flex-end;
 
     overflow: hidden;
 
     background-size: cover;
     background-position: center;
+
+    border-radius: 2px;
 }
 
 .collection-card::after {
     content: "";
 
     position: absolute;
+
     inset: 0;
 
     background:
         linear-gradient(
-            transparent 40%,
-            rgba(0, 0, 0, 0.85)
+            transparent 35%,
+            rgba(0, 0, 0, 0.88)
         );
 }
 
+
+/* Collection backgrounds */
+
 .men {
     background:
-        linear-gradient(135deg, #191919, #777);
+        linear-gradient(
+            135deg,
+            #191919,
+            #777
+        );
 }
 
 .women {
     background:
-        linear-gradient(135deg, #e7d8c5, #76594d);
+        linear-gradient(
+            135deg,
+            #e7d8c5,
+            #76594d
+        );
 }
 
 .contemporary {
     background:
-        linear-gradient(135deg, #16483d, #101614);
+        linear-gradient(
+            135deg,
+            #16483d,
+            #101614
+        );
 }
+
+
+/* Collection text */
 
 .collection-overlay {
     position: relative;
 
     z-index: 2;
 
-    padding: 25px;
+    width: 100%;
+
+    padding: 30px;
 
     color: white;
+
+    text-align: center;
 }
 
 .collection-overlay h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 25px;
+
+    margin-bottom: 12px;
 }
 
 .collection-overlay a {
@@ -468,15 +581,17 @@ button {
 
     font-size: 12px;
 
+    font-weight: bold;
+
     text-transform: uppercase;
 
     letter-spacing: 2px;
 }
 
 
-/* =========================
+/* =====================================================
    CTA
-========================= */
+===================================================== */
 
 .cta {
     background: var(--black);
@@ -488,6 +603,8 @@ button {
 
 .cta-content {
     max-width: 800px;
+
+    margin: 0 auto;
 }
 
 .cta h2 {
@@ -523,13 +640,16 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer {
     background: #050505;
+
     color: white;
+
+    text-align: center;
 }
 
 .footer-content {
@@ -538,6 +658,8 @@ button {
     display: flex;
 
     justify-content: space-between;
+
+    align-items: center;
 
     gap: 30px;
 }
@@ -556,6 +678,7 @@ button {
     gap: 20px;
 
     align-items: center;
+    justify-content: center;
 }
 
 .social-links a {
@@ -591,18 +714,40 @@ button {
 
 @media (max-width: 900px) {
 
+    .container {
+        width: 92%;
+    }
+
+    /* Logo */
+
+    .logo {
+        width: 100px;
+        height: 52px;
+    }
+
+    /* Navigation */
+
     .nav {
         gap: 18px;
     }
 
     .nav a {
-        font-size: 11px;
+        font-size: 10px;
     }
 
-    .service-grid,
+    /* Services */
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Collection */
+
     .collection-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* About */
 
     .about-grid {
         gap: 35px;
@@ -620,20 +765,30 @@ button {
 
 @media (max-width: 768px) {
 
-    /* HEADER */
+    /* ================= HEADER ================= */
+
+    .header {
+        height: 65px;
+    }
 
     .nav-container {
         min-height: 65px;
     }
 
+    /* Small logo at top left */
+
     .logo {
-        font-size: 14px;
-        letter-spacing: 3px;
+        width: 90px;
+        height: 48px;
     }
+
+    /* Hamburger */
 
     .menu-toggle {
         display: block;
     }
+
+    /* Mobile navigation */
 
     .nav {
         position: absolute;
@@ -645,15 +800,15 @@ button {
 
         padding: 25px;
 
-        background: rgba(11, 11, 11, 0.98);
+        background: rgba(11, 11, 11, 0.97);
 
         display: none;
 
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: center;
 
-        gap: 20px;
+        gap: 18px;
     }
 
     .nav.active {
@@ -663,13 +818,15 @@ button {
     .nav a {
         width: 100%;
 
-        padding: 5px 0;
+        padding: 7px 0;
+
+        text-align: center;
 
         font-size: 13px;
     }
 
 
-    /* HERO */
+    /* ================= HERO ================= */
 
     .hero {
         min-height: 100svh;
@@ -687,14 +844,16 @@ button {
     }
 
     .hero-content {
-        width: 100%;
         max-width: 600px;
 
-        padding-top: 100px;
+        padding-top: 90px;
+
+        text-align: center;
     }
 
     .eyebrow {
         font-size: 9px;
+
         letter-spacing: 2px;
     }
 
@@ -707,15 +866,19 @@ button {
     .hero-text {
         max-width: 500px;
 
+        margin: 0 auto 25px;
+
         font-size: 15px;
 
         line-height: 1.5;
+    }
 
-        margin-bottom: 25px;
+    .hero-buttons {
+        justify-content: center;
     }
 
 
-    /* BUTTONS */
+    /* ================= BUTTONS ================= */
 
     .btn {
         padding: 13px 18px;
@@ -724,26 +887,59 @@ button {
     }
 
 
-    /* SECTIONS */
+    /* ================= SECTIONS ================= */
 
     .section {
         padding: 75px 0;
     }
 
 
-    /* SERVICES */
+    /* ================= SECTION HEADINGS ================= */
 
-    .service-grid {
-        grid-template-columns: 1fr;
+    .section-heading {
+        margin-bottom: 40px;
+
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(40px, 11vw, 58px);
+    }
+
+    .section-heading > p:last-child {
+        font-size: 15px;
     }
 
 
-    /* ABOUT */
+    /* ================= SERVICES ================= */
+
+    .service-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .service-card {
+        padding: 30px 25px;
+    }
+
+    .service-card h3 {
+        font-size: 24px;
+    }
+
+
+    /* ================= ABOUT ================= */
 
     .about-grid {
         grid-template-columns: 1fr;
 
         gap: 40px;
+    }
+
+    .about-content {
+        text-align: center;
+
+        order: 1;
     }
 
     .about-image {
@@ -755,21 +951,44 @@ button {
     }
 
 
-    /* COLLECTION */
+    /* ================= COLLECTION ================= */
 
     .collection-grid {
         grid-template-columns: 1fr;
+
+        gap: 18px;
     }
 
     .collection-card {
-        height: 350px;
+        height: 360px;
+    }
+
+    .collection-overlay {
+        padding: 25px;
     }
 
 
-    /* FOOTER */
+    /* ================= CTA ================= */
+
+    .cta-content {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: clamp(42px, 11vw, 60px);
+    }
+
+
+    /* ================= FOOTER ================= */
 
     .footer-content {
         flex-direction: column;
+
+        text-align: center;
+
+        justify-content: center;
     }
 
     .social-links {
@@ -788,12 +1007,30 @@ button {
         width: 90%;
     }
 
+
+    /* Logo */
+
+    .logo {
+        width: 82px;
+        height: 44px;
+    }
+
+
+    /* Hamburger */
+
+    .menu-toggle {
+        font-size: 30px;
+    }
+
+
+    /* Hero */
+
     .hero {
         background-position: 55% center;
     }
 
     .hero-content {
-        padding-top: 90px;
+        padding-top: 80px;
     }
 
     .hero h1 {
@@ -804,27 +1041,53 @@ button {
         font-size: 14px;
     }
 
+
+    /* Buttons */
+
     .hero-buttons {
         flex-direction: column;
 
-        align-items: flex-start;
+        align-items: center;
     }
 
     .hero-buttons .btn {
         width: auto;
     }
 
+
+    /* Section heading */
+
     .section-heading h2 {
         font-size: 42px;
     }
 
+
+    /* Services */
+
     .service-card {
-        padding: 25px;
+        padding: 25px 20px;
     }
+
+
+    /* About */
+
+    .about-content h2 {
+        font-size: 42px;
+    }
+
+    .about-image img {
+        min-height: 380px;
+    }
+
+
+    /* Collection */
 
     .collection-card {
         height: 320px;
     }
+
+
+    /* CTA */
 
     .cta h2 {
         font-size: 44px;
@@ -832,14 +1095,40 @@ button {
 
     .contact-buttons {
         flex-direction: column;
+
         align-items: center;
     }
 }
 
 
-/* =========================
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .logo {
+        width: 75px;
+        height: 40px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+
+    .collection-card {
+        height: 300px;
+    }
+}
+
+
+/* =====================================================
    SCROLL ANIMATION
-========================= */
+===================================================== */
 
 .reveal {
     opacity: 0;
@@ -855,36 +1144,4 @@ button {
     opacity: 1;
 
     transform: translateY(0);
-}
-/* ================= TABLET ================= */
-
-@media (max-width: 900px) {
-
-    .logo {
-        width: 110px;
-        height: 48px;
-    }
-
-    .logo img {
-        width: 110px;
-        height: 48px;
-    }
-
-}
-
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-    .logo {
-        width: 95px;
-        height: 45px;
-    }
-
-    .logo img {
-        width: 95px;
-        height: 45px;
-    }
-
 }
