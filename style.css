@@ -50,13 +50,13 @@ button {
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* ================= NAV CONTAINER ================= */
 
-.container {
-    width: min(1120px, 92%);
-    margin: 0 auto;
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
 }
 
 
